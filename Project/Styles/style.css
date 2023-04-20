@@ -16,3 +16,18 @@ h1 {
   width: 50%;
   margin: 100px auto;
 }
+
+.chart-1,
+.chart-2,
+.chart-3,
+.chart-4 {
+  /* background-color: #333; */
+  margin-bottom: 10%;
+  margin: 10% 0px;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  transition: all 0.8s ease-in-out;
+}
