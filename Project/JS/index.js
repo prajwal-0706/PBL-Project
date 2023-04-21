@@ -1,22 +1,26 @@
-const charts = document.querySelectorAll('.chart');
+const charts = document.querySelectorAll(".chart");
 
 //Plot Options for chart 1
 let options_1 = {
   chart: {
-    type: 'bar',
+    type: "bar",
   },
   series: [
     {
-      name: 'Population',
+      name: "Population",
       data: [10, 16, 37, 17, 38],
     },
     {
-      name: 'Second Population',
+      name: "Second Population",
       data: [50, 20, 39, 40, 49],
+    },
+    {
+      name: "Third Population",
+      data: [12, 23, 43, 85, 45],
     },
   ],
   xaxis: {
-    categories: ['h', 'e', 'l', 'l', 'o'],
+    categories: ["h", "e", "l", "l", "o"],
   },
 };
 
@@ -32,20 +36,20 @@ chart.render();
 
 let options_2 = {
   chart: {
-    type: 'line',
+    type: "line",
   },
   series: [
     {
-      name: 'Total Count',
+      name: "Total Count",
       data: [20, 30, 40, 50, 10],
     },
     {
-      name: 'Another Count',
+      name: "Another Count",
       data: [12, 45, 67, 8, 12],
     },
   ],
   xaxis: {
-    categories: ['p', 'r', 'a', 'j', 'w'],
+    categories: ["p", "r", "a", "j", "w"],
   },
 };
 
@@ -60,11 +64,11 @@ chart_1.render();
 
 let option_3 = {
   chart: {
-    type: 'donut',
+    type: "donut",
   },
   series: [12, 34, 56, 67, 54],
   plotOptions: {
-    labels: ['Apple', 'Watermelon', 'Mango', 'Coconut', 'Banana'],
+    labels: ["Apple", "Watermelon", "Mango", "Coconut", "Banana"],
     pie: {
       customScale: 0.8,
       donut: {
@@ -88,25 +92,25 @@ chart_3.render();
 
 let option_4 = {
   chart: {
-    type: 'area',
+    type: "area",
   },
   series: [
     {
-      name: 'Area Chart',
+      name: "Area Chart",
       data: [60, 40, 20, 60, 50],
     },
   ],
   dataLabels: {
     enabled: false,
   },
-  colors: ['#00BA6C'],
+  colors: ["#00BA6C"],
   fill: {
     gradient: {
       enabled: true,
     },
   },
   xaxis: {
-    categories: ['D', 'U', 'J', 'A', 'L'],
+    categories: ["D", "U", "J", "A", "L"],
   },
   // grid: {
   //   yaxis: {
