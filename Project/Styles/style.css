@@ -9,10 +9,6 @@
   scroll-behavior: smooth;
 }
 
-h1 {
-  text-align: center;
-}
-
 .container {
   width: 50%;
   margin: 100px auto;
@@ -31,4 +27,68 @@ h1 {
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
   transition: all 0.8s ease-in-out;
+}
+
+/*  Dashboard CSS  */
+.admin-container {
+  min-height: 100vh;
+  background-color: #f1f4fa;
+}
+
+.admin-sidebar {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  width: 260px;
+  height: 97vh;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.admin-body {
+  margin-left: 300px;
+}
+
+.admin-sidebar-logo {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.admin-sidebar-logo p {
+  font-size: 22px;
+  font-weight: 600;
+  color: #3a36db;
+}
+
+.admin-sidebar-content,
+.sidebar-content-list {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.sidebar-content-list .admin-sidebar-card {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.admin-sidebar-card a .sidebar-card-img {
+  padding: 20px 30px;
+}
+
+.admin-sidebar-card a {
+  text-decoration: none;
+  color: #788b9a;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.admin-sidebar-card:hover a,
+.sidebar-select.active {
+  color: #3a36db;
+  background-color: #d3ebff;
 }
