@@ -9,16 +9,10 @@
   scroll-behavior: smooth;
 }
 
-.container {
-  width: 50%;
-  margin: 100px auto;
-}
-
 .chart-1,
 .chart-2,
 .chart-3,
 .chart-4 {
-  /* background-color: #333; */
   margin-bottom: 10%;
   margin: 10% 0px;
   border-radius: 10px;
@@ -30,8 +24,10 @@
 }
 
 /*  Dashboard CSS  */
-.admin-container {
-  min-height: 100vh;
+.admin-container,
+.analytics-container {
+  height: fit-content;
+  padding-bottom: 50px;
   background-color: #f1f4fa;
 }
 
@@ -46,7 +42,7 @@
 }
 
 .admin-body {
-  margin-left: 300px;
+  margin-left: 280px;
 }
 
 .admin-sidebar-logo {
@@ -91,4 +87,155 @@
 .sidebar-select.active {
   color: #3a36db;
   background-color: #d3ebff;
+}
+
+.analytics-content {
+  margin-left: 270px;
+}
+
+.admin-nav {
+  padding-top: 50px;
+  margin-left: 10px;
+  width: 95%;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-access {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0px 25px 0;
+  gap: 4rem;
+}
+
+.admin-access-card {
+  width: 240px;
+  height: 95px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  gap: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.admin-access-card:hover {
+  transform: scale(1.1) translate(-4px, -4px);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.admin-charts-1:hover,
+.admin-charts-2:hover {
+  transform: scale(1.03) translate(-4px, -4px);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.access-card-content .card-content-1 {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.access-card-content .card-content-2 {
+  font-size: 14px;
+  color: #788b9a;
+}
+
+.admin-charts,
+.admin-recent-events {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 40px 0px;
+}
+
+.admin-charts-1,
+.admin-recent-event-1 {
+  width: 50%;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  transition: all 0.2s ease-in-out;
+}
+
+.admin-charts-2,
+.admin-recent-event-2 {
+  width: 40%;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.admin-recent-event-1 {
+  width: 50%;
+  background-color: #fff;
+}
+
+.admin-recent-events-heading {
+  display: flex;
+  width: 100%;
+  height: 4vh;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-title {
+  font-weight: 600;
+}
+
+.admin-recent-events-heading div {
+  margin-top: -15px;
+  font-size: 40px;
+}
+
+.admin-recent-events-content {
+  width: 100%;
+  text-align: center;
+}
+
+.admin-recent-events-content table {
+  margin-left: -20px;
+  margin-top: 15px;
+  border-collapse: collapse;
+}
+
+.admin-recent-events-content table tr {
+  cursor: pointer;
+  border-radius: 15px;
+  width: 100%;
+}
+
+.admin-recent-events-content table td {
+  width: 150px;
+  font-size: 16px;
+  padding: 20px 0px;
+  color: #788b9a;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.admin-recent-events-content table tr:hover {
+  background-color: #d3ebff;
+  color: #3a36db;
+}
+.admin-recent-events-content table tr:hover td {
+  color: #3a36db;
+}
+
+.admin-recent-events-content table td.header {
+  font-weight: 500;
+  color: #000;
+  font-size: 17px;
+  pointer-events: none;
+  border: none;
 }
