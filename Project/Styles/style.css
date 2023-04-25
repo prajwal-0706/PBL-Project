@@ -29,6 +29,15 @@
   height: fit-content;
   padding-bottom: 50px;
   background-color: #f1f4fa;
+  transition: all 0.3s ease-in-out;
+}
+
+.admin-body {
+  margin-left: 280px;
+}
+
+.admin-container.toggle {
+  background-color: #222131;
 }
 
 .admin-sidebar {
@@ -39,10 +48,11 @@
   height: 97vh;
   background-color: #fff;
   border-radius: 10px;
+  transition: all 0.3s ease-in-out;
 }
 
-.admin-body {
-  margin-left: 280px;
+.admin-sidebar.toggle {
+  background-color: #39394b;
 }
 
 .admin-sidebar-logo {
@@ -55,6 +65,10 @@
   font-size: 22px;
   font-weight: 600;
   color: #3a36db;
+}
+
+.admin-sidebar.toggle .admin-sidebar-logo p {
+  color: #fff;
 }
 
 .admin-sidebar-content,
@@ -70,7 +84,13 @@
 }
 
 .admin-sidebar-card a .sidebar-card-img {
-  padding: 20px 30px;
+  padding: 20px 27px;
+  width: 76px;
+}
+
+.admin-sidebar-card a .sidebar-text {
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .admin-sidebar-card a {
@@ -83,10 +103,19 @@
   font-weight: 500;
 }
 
+.admin-container.toggle .admin-sidebar-card a {
+  color: #fff;
+}
+
 .admin-sidebar-card:hover a,
 .sidebar-select.active {
   color: #3a36db;
   background-color: #d3ebff;
+}
+
+.admin-container.toggle .admin-sidebar-card:hover a,
+.admin-container.toggle .sidebar-select.active {
+  background-color: #363584;
 }
 
 .analytics-content {
@@ -101,6 +130,17 @@
   height: 50px;
   align-items: center;
   justify-content: space-between;
+  color: #000;
+}
+
+.admin-container.toggle .admin-nav {
+  color: #fff;
+}
+
+.admin-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
 }
 
 .admin-access {
@@ -130,6 +170,12 @@
     rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
+.admin-container.toggle .admin-access-card:hover {
+  transform: scale(1.1) translate(-4px, -4px);
+  box-shadow: rgba(255, 255, 255, 0.07) 0px 1px 1px,
+    rgba(255, 255, 255, 0.07) 0px 2px 2px, rgba(255, 255, 255, 0.07) 0px 4px 4px,
+    rgba(255, 255, 255, 0.07) 0px 2px 2px, rgba(255, 255, 255, 0.07) 0px 8px 8px;
+}
 
 .admin-charts-1:hover,
 .admin-charts-2:hover {
@@ -147,6 +193,10 @@
 .access-card-content .card-content-2 {
   font-size: 14px;
   color: #788b9a;
+}
+
+.admin-container.toggle .card-content-2 {
+  color: #abadbf;
 }
 
 .admin-charts,
@@ -176,9 +226,13 @@
   transition: all 0.2s ease-in-out;
 }
 
-.admin-recent-event-1 {
-  width: 50%;
-  background-color: #fff;
+.admin-charts.toggle .admin-charts-1,
+.admin-charts.toggle .admin-charts-2,
+.admin-container.toggle .admin-access-card,
+.admin-container.toggle .admin-recent-event-1,
+.admin-container.toggle .admin-recent-event-2 {
+  background-color: #39394b;
+  color: #fff;
 }
 
 .admin-recent-events-heading {
@@ -224,6 +278,10 @@
   cursor: pointer;
 }
 
+.admin-container-toggle .admin-recent-events-content table td {
+  color: #abadbf;
+}
+
 .admin-recent-events-content table tr:hover {
   background-color: #d3ebff;
   color: #3a36db;
@@ -238,4 +296,8 @@
   font-size: 17px;
   pointer-events: none;
   border: none;
+}
+
+.admin-container.toggle .admin-recent-events-content table td.header {
+  color: #fff;
 }

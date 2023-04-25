@@ -44,6 +44,10 @@ let chartOptions_1 = {
   xaxis: {
     categories: ['1', '2', '3', '4', '5', '6', '7', '8'],
   },
+
+  theme: {
+    mode: 'light',
+  },
 };
 
 // Selecting the chart Div
@@ -82,9 +86,18 @@ let chartOption_2 = {
   chartOptions: {
     labels: [1, 2, 3, 4],
   },
+
   legend: {
     position: 'left',
     offsetY: 100,
+  },
+
+  stroke: {
+    width: 1.5,
+  },
+
+  theme: {
+    mode: 'light',
   },
 };
 
@@ -98,3 +111,31 @@ const chart_2 = new ApexCharts(
 // Render the changes
 
 chart_2.render();
+
+let toggleMode = 'light';
+
+const clickHandler_2 = () => {
+  if (toggleMode === 'light') {
+    toggleMode = 'dark';
+  } else {
+    toggleMode = 'light';
+  }
+
+  chart_1.updateOptions({
+    theme: {
+      mode: toggleMode,
+    },
+    gradient: {
+      shadeIntensity: 0.2,
+    },
+  });
+
+  chart_2.updateOptions({
+    theme: {
+      mode: toggleMode,
+    },
+    stroke: {
+      width: 0,
+    },
+  });
+};

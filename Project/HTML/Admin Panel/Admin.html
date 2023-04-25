@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../Styles/style.css" />
+    <link rel="stylesheet" href="../../Styles/toggleSwitcher.css" />
     <title>Admin Page</title>
   </head>
   <body>
@@ -91,11 +92,31 @@
         </div>
       </div>
       <div class="admin-body">
-        <div class="admin-nav">
+        <div class="admin-nav toggle">
           <h1 class="admin-heading">Dashboard</h1>
-          <div class="admin-current-date">April 24</div>
+          <div class="admin-nav-right">
+            <div
+              class="toggleContainer"
+              onclick="clickHandler_1();clickHandler_2()"
+            >
+              <div class="change">
+                <span class="change-handler">
+                  <span class="crater crater-1"></span>
+                  <span class="crater crater-2"></span>
+                  <span class="crater crater-3"></span>
+                </span>
+                <span class="star star-1"></span>
+                <span class="star star-2"></span>
+                <span class="star star-3"></span>
+                <span class="star star-4"></span>
+                <span class="star star-5"></span>
+                <span class="star star-6"></span>
+              </div>
+            </div>
+            <div class="admin-current-date">April 24</div>
+          </div>
         </div>
-        <div class="admin-access">
+        <div class="admin-access toggle">
           <div class="admin-access-card">
             <div class="access-card-img">
               <img src="../../Images/icons/saveProduct.svg" alt="saveProduct" />
