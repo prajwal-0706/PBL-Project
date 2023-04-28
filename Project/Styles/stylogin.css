@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   scroll-behavior: smooth;
 }
 .login-container {
@@ -30,7 +30,7 @@
 }
 
 .login-left-heading {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .right {
@@ -75,10 +75,11 @@ hr {
   height: 1px;
   background-color: #f1f4fa;
   width: 37%;
-  margin-top: 10px;
+  margin-top: 13px;
 }
 p {
   padding: 0px 8px;
+  /* margin-bottom: 8px; */
 }
 .right1 {
   display: flex;
@@ -144,6 +145,7 @@ p {
 
 .bottom-text {
   margin-left: -4px;
+  margin-bottom: 60px;
 }
 
 .bottom-text a {
