@@ -46,17 +46,21 @@
           </div>
           <form class="login-form">
             <div class="signup-email">
+              <p class="text">Enter your Name</p>
+              <input class="input name" type="text" placeholder="Name" />
+            </div>
+            <div class="signup-password">
               <p class="text">Enter your Email</p>
-              <input class="input" type="email" placeholder=" Email" />
+              <input
+                class="input email"
+                type="email"
+                placeholder=" Email@gmail.com"
+              />
             </div>
             <div class="signup-password">
               <p class="text">Enter your Password</p>
-              <input class="input" type="password" placeholder=" Password" />
-            </div>
-            <div class="signup-password">
-              <p class="text">Confirm Password</p>
               <input
-                class="input"
+                class="input password"
                 type="password"
                 placeholder="Confirm Password"
               />
@@ -80,5 +84,8 @@
         </div>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="../../JS/appwrite_config.js"></script>
   </body>
 </html>
