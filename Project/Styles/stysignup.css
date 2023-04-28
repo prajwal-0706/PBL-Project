@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
 }
 body {
@@ -22,17 +25,10 @@ a {
 .img {
   margin-top: 8%;
 }
-.label {
-  font-weight: bolder;
-  margin: 10px;
-}
+
 .column {
   display: flex;
-  /* flex-direction: row; */
   width: 75%;
-  /* margin-top: 5%; */
-  /* margin-bottom: 4%; */
-  /* padding: 0px 70px; */
 }
 
 .btn {
@@ -45,27 +41,23 @@ a {
   height: 36px;
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
 }
-.btn:last-child{
+.btn:last-child {
   padding-right: 35px;
 }
 .google {
   height: 60%;
   width: 50%;
-  /* margin-right: 3px; */
 }
 .fb {
   width: 70%;
   height: 60%;
-  /* margin-right: 5px; */
 }
 .line {
   display: flex;
   width: 85%;
   margin-left: 14%;
   gap: 0.3rem;
-  /* margin-bottom: 5%; */
 }
 .text {
   font-size: 13px;
@@ -82,7 +74,6 @@ a {
   border-radius: 4px;
   background-color: #f1f4fa;
   padding-left: 3%;
-  /* margin: 5px 0px; */
 }
 .btn2 {
   width: 70%;
@@ -119,10 +110,9 @@ hr {
   padding-left: 7%;
   margin-top: 3%;
 }
-.title:hover{
+.title:hover {
   cursor: pointer;
   background-color: #101b24;
-  
 }
 .reset {
   margin-left: 44%;
@@ -138,7 +128,7 @@ hr {
   color: #788b9a;
   font-size: small;
 }
-.bottomtext{
+.bottomtext {
   font-size: 13px;
   font-weight: bold;
   color: #04111b;

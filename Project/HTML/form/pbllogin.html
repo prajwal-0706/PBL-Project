@@ -4,42 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="shortcut icon"
+      href="../../Images/icons/logo.svg"
+      type="image/x-icon"
+    />
+    <title>Log In</title>
     <link rel="stylesheet" href="../../Styles/stylogin.css" />
   </head>
 
   <body>
-    <div class="left">
-      <div class="img"><img src="../../Images/Forms/logo.svg" alt="img" /></div>
-      <br />
-      <p>Log in</p>
-      <div class="column">
-        <button class="btn" type="button">
-          <img class="google" src="../../Images/Forms/google.svg" alt="img" /> 
-          Google
-        </button>
-        <button class="btn" type="button">
-          <img class="fb" src="../../Images/Forms/fb.svg" alt="img" />Facebook
-        </button>
+    <div class="login-container">
+      <div class="login-wrapper">
+        <div class="left">
+          <div class="img">
+            <img src="../../Images/Forms/logo.svg" alt="img" />
+          </div>
+          <h1 class="login-left-heading">Log in</h1>
+          <div class="column">
+            <button class="btn" type="button">
+              <img
+                class="google"
+                src="../../Images/Forms/google.svg"
+                alt="img"
+              />
+              Google
+            </button>
+            <button class="btn" type="button">
+              <img
+                class="fb"
+                src="../../Images/Forms/fb.svg"
+                alt="img"
+              />Facebook
+            </button>
+          </div>
+          <div class="right1">
+            <hr />
+            <p>Or</p>
+            <hr />
+          </div>
+          <div class="login-email">
+            <p class="text">Enter your Email</p>
+            <input class="input" type="text" placeholder=" Email" />
+          </div>
+          <div class="login-password">
+            <p class="text">Enter your Password</p>
+            <input class="input" type="text" placeholder=" Password" /><br />
+          </div>
+          <p class="reset"><a href="#"> Reset Password?</a></p>
+          <br />
+          <button class="btn2">Log In</button><br />
+          <p class="text bottom-text" style="color: #788b9a">
+            Don't Have Account Yet? <a href="#"> Create new Account</a>
+          </p>
+        </div>
+        <div class="right">
+          <img
+            draggable="false"
+            class="img2"
+            src="../../Images/Forms/signup.svg"
+            alt="img"
+          />
+        </div>
       </div>
-      <div class="right1">
-        <hr />
-        <p>Or</p>
-        <hr />
-      </div>
-      <p class="text">Enter your Email</p>
-      <input class="input" type="text" placeholder=" Email" />
-      <p class="text">Enter your Password</p>
-      <input class="input" type="text" placeholder=" Password" /><br />
-      <p class="reset"><a href="#"> Reset Password?</a></p>
-      <br />
-      <button class="btn2">Log In</button><br />
-      <p class="text" style="color: #788b9a">
-        Don't Have Account Yet? <a href="#">New Account</a>
-      </p>
-    </div>
-    <div class="right">
-      <img class="img2" src="../../Images/Forms/signup.png" alt="img" />
     </div>
   </body>
 </html>

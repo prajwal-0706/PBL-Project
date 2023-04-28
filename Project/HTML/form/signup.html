@@ -4,49 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link
+      rel="shortcut icon"
+      href="../../Images/icons/logo.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../../Styles/stysignup.css" />
+    <link rel="stylesheet" href="../../Styles/stylogin.css" />
+    <title>Sign Up</title>
   </head>
 
   <body>
-    <div class="left">
-      <div class="img"><img src="../../Images/Forms/logo.svg" alt="img" /></div>
-      <p class="label">sign Up</p>
-      <div class="column">
-        <button class="btn" type="button">
-          <img class="google" src="../../Images/Forms/google.svg" alt="img" />
-          Google
-        </button>
-        <button class="btn" type="button">
-          <img class="fb" src="../../Images/Forms/fb.svg" alt="img" />Facebook
-        </button>
+    <div class="login-container">
+      <div class="login-wrapper">
+        <div class="left">
+          <div style="margin: 18% 0 15px 0" class="img">
+            <img src="../../Images/Forms/logo.svg" alt="img" />
+          </div>
+          <h1 class="label">Sign Up</h1>
+          <div style="margin: 12px 6px" class="column">
+            <button class="btn" type="button">
+              <img
+                class="google"
+                src="../../Images/Forms/google.svg"
+                alt="img"
+              />
+              Google
+            </button>
+            <button class="btn" type="button">
+              <img
+                class="fb"
+                src="../../Images/Forms/fb.svg"
+                alt="img"
+              />Facebook
+            </button>
+          </div>
+          <div class="line">
+            <hr />
+            <p>Or</p>
+            <hr />
+          </div>
+          <label class="text">Enter your Email</label>
+          <input class="input" type="email" placeholder=" Email" />
+          <label class="text">Enter your Password</label>
+          <input class="input" type="password" placeholder=" Password" />
+          <label class="text">Confirm Password</label>
+          <input class="input" type="password" placeholder="Confirm Password" />
+          <div class="checkbox">
+            <input required id="checkbox" type="checkbox" />
+            <label for="checkbox">
+              By creating an account you agree to the
+              <a href="#"> terms of use </a> and our
+              <a href="#">privacy policy. </a> </label
+            ><br />
+          </div>
+          <button type="submit" class="btn2">Create Account</button><br />
+          <p class="bottomtext">
+            Don't Have Account Yet? <a href="#">New Account</a>
+          </p>
+        </div>
+        <div class="right">
+          <img class="img2" src="../../Images/Forms/login.svg" alt="img" />
+        </div>
       </div>
-      <div class="line">
-        <hr />
-        <p>Or</p>
-        <hr />
-      </div>
-      <label class="text">Enter your Email</label>
-      <input class="input" type="text" placeholder=" Email" />
-      <label class="text">Enter your Password</label>
-      <input class="input" type="text" placeholder=" Password" />
-      <label class="text">Enter Admin Position</label>
-      <input class="input" type="text" placeholder="Position" />
-      <br />
-      <button class="title">Title</button>
-      <div class="checkbox">
-        <input type="checkbox" />
-        <label for="checkbox">
-          By creating an account you agree to the <a href="#"> terms of use </a> and our 
-         <a href="#">privacy policy. </a> </label><br />
-      </div>
-      <button class="btn2">Create Account</button><br />
-      <p class="bottomtext">
-        Don't Have Account Yet? <a href="#">New Account</a>
-      </p>
-    </div>
-    <div class="right">
-      <img class="img2" src="../../Images/Forms/login.png" alt="img" />
     </div>
   </body>
 </html>
