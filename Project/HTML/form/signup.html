@@ -18,7 +18,7 @@
     <div class="login-container">
       <div class="login-wrapper">
         <div class="left">
-          <div style="margin: 18% 0 15px 0" class="img">
+          <div style="margin: 70px 0 15px 0" class="img">
             <img src="../../Images/Forms/logo.svg" alt="img" />
           </div>
           <h1 class="label">Sign Up</h1>
@@ -44,21 +44,33 @@
             <p>Or</p>
             <hr />
           </div>
-          <label class="text">Enter your Email</label>
-          <input class="input" type="email" placeholder=" Email" />
-          <label class="text">Enter your Password</label>
-          <input class="input" type="password" placeholder=" Password" />
-          <label class="text">Confirm Password</label>
-          <input class="input" type="password" placeholder="Confirm Password" />
-          <div class="checkbox">
-            <input required id="checkbox" type="checkbox" />
-            <label for="checkbox">
-              By creating an account you agree to the
-              <a href="#"> terms of use </a> and our
-              <a href="#">privacy policy. </a> </label
-            ><br />
-          </div>
-          <button type="submit" class="btn2">Create Account</button><br />
+          <form class="login-form">
+            <div class="signup-email">
+              <p class="text">Enter your Email</p>
+              <input class="input" type="email" placeholder=" Email" />
+            </div>
+            <div class="signup-password">
+              <p class="text">Enter your Password</p>
+              <input class="input" type="password" placeholder=" Password" />
+            </div>
+            <div class="signup-password">
+              <p class="text">Confirm Password</p>
+              <input
+                class="input"
+                type="password"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <div class="checkbox">
+              <input required id="checkbox" type="checkbox" />
+              <label for="checkbox">
+                By creating an account you agree to the
+                <a href="#"> terms of use </a> and our
+                <a href="#">privacy policy. </a> </label
+              ><br />
+            </div>
+            <button type="submit" class="btn2">Create Account</button><br />
+          </form>
           <p class="bottomtext">
             Don't Have Account Yet? <a href="#">New Account</a>
           </p>
