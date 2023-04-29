@@ -22,10 +22,23 @@ const createAccount = async (email, password, name) => {
   }
 };
 
-const googleAuth = async () => {
+const googleAuth = () => {
+  // e.preventDefault();
+  try {
+    account.createOAuth2Session(
+      'google',
+      'http://127.0.0.1:5501/Project/HTML/User%20Panel/user-side.html',
+      'http://127.0.0.1:5501/Project/HTML/form/pbllogin.html'
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const githubAuth = async () => {
   try {
     const promise = await account.createOAuth2Session(
-      'google',
+      'github',
       'http://127.0.0.1:5501/Project/HTML/Admin%20Panel/Admin.html',
       'http://127.0.0.1:5501/Project/HTML/form/pbllogin.html'
     );
@@ -52,6 +65,11 @@ form.addEventListener('submit', (e) => {
   createAccount(email, password, Name);
 });
 
-document.querySelector('.ggl').addEventListener('click', () => {
+document.querySelector('.ggl').addEventListener('click', (e) => {
+  e.preventDefault();
   googleAuth();
+});
+
+document.querySelector('.fbb').addEventListener('click', () => {
+  githubAuth();
 });

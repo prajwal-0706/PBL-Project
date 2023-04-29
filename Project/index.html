@@ -4,7 +4,86 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PBL Project | Dynamic Website</title>
+    <link
+      rel="shortcut icon"
+      href="./Images/icons/logo.svg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./Styles/stysignup.css" />
+    <link rel="stylesheet" href="./Styles/stylogin.css" />
+    <title>Sign Up</title>
   </head>
-  <body></body>
+
+  <body>
+    <div class="login-container">
+      <div class="login-wrapper">
+        <div class="left">
+          <div style="margin: 70px 0 15px 0" class="img">
+            <img src="./Images/Forms/logo.svg" alt="img" />
+          </div>
+          <h1 class="label">Sign Up</h1>
+          <div style="margin: 12px 6px" class="column">
+            <button class="btn ggl" type="button">
+              <img class="google" src="./Images/Forms/google.svg" alt="img" />
+              Google
+            </button>
+            <button class="btn fbb" type="button">
+              <img class="fb" src="./Images/Forms/fb.svg" alt="img" />GitHub
+            </button>
+          </div>
+          <div class="line">
+            <hr />
+            <p>Or</p>
+            <hr />
+          </div>
+          <form class="login-form">
+            <div class="signup-email">
+              <p class="text">Enter your Name</p>
+              <input class="input name" type="text" placeholder="Name" />
+            </div>
+            <div class="signup-password">
+              <p class="text">Enter your Email</p>
+              <input
+                class="input email"
+                type="email"
+                placeholder=" Email@gmail.com"
+              />
+            </div>
+            <div class="signup-password">
+              <p class="text">Enter your Password</p>
+              <input
+                class="input password"
+                type="password"
+                placeholder=" Password"
+              />
+            </div>
+            <div class="checkbox">
+              <input required id="checkbox" type="checkbox" />
+              <label for="checkbox">
+                By creating an account you agree to the
+                <a href="#"> terms of use </a> and our
+                <a href="#">privacy policy. </a> </label
+              ><br />
+            </div>
+            <button type="submit" class="btn2">Create Account</button><br />
+          </form>
+          <p class="bottomtext">
+            Already have an Account?
+            <a href="./HTML/form/pbllogin.html">Log in</a>
+          </p>
+        </div>
+        <div class="right">
+          <img
+            draggable="false"
+            class="img2"
+            src="./Images/Forms/login.svg"
+            alt="img"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="./JS/appwrite_config.js"></script>
+  </body>
 </html>

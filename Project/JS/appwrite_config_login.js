@@ -10,7 +10,20 @@ const googleAuth = async () => {
   try {
     const promise = await account.createOAuth2Session(
       'google',
-      'http://127.0.0.1:5501/Project/HTML/Admin%20Panel/Admin.html',
+      'http://127.0.0.1:5501/Project/HTML/User%20Panel/user-side.html',
+      'http://127.0.0.1:5501/Project/HTML/form/pbllogin.html'
+    );
+    console.log(promise);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const githubAuth = async () => {
+  try {
+    const promise = await account.createOAuth2Session(
+      'github',
+      'http://127.0.0.1:5501/Project/HTML/User%20Panel/user-side.html',
       'http://127.0.0.1:5501/Project/HTML/form/pbllogin.html'
     );
     console.log(promise);
@@ -21,4 +34,9 @@ const googleAuth = async () => {
 
 document.querySelector('.ggl').addEventListener('click', () => {
   googleAuth();
+});
+
+document.querySelector('.fbb').addEventListener('click', (e) => {
+  e.preventDefault();
+  githubAuth();
 });
