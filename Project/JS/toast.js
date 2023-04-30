@@ -1,15 +1,11 @@
-const { Client, Account, ID } = Appwrite;
-const client = new Client();
-const account = new Account(client);
-const notifications = document.querySelector('.notifications');
-const hello = document.querySelector('.hello');
-let getData;
+const notifications = document.querySelector('.notifications'),
+  buttons = document.querySelectorAll('.buttons .btn');
 
 const toastDetails = {
   timer: 5000,
   success: {
     icon: 'fa-circle-check',
-    text: `SuccessFully Logged In `,
+    text: 'Success: This is a success toast.',
   },
   error: {
     icon: 'fa-circle-xmark',
@@ -44,27 +40,6 @@ const createToast = (id) => {
   toast.timeoutId = setTimeout(() => removeToast(toast), toastDetails.timer);
 };
 
-client
-  .setEndpoint('https://cloud.appwrite.io/v1')
-  .setProject('64385f72bbae8835bef7');
-
-const fetchUser = async () => {
-  try {
-    const data = await account.get();
-    getData = await data;
-    if (getData) {
-      hello.textContent = `${data.name}`;
-      console.log(getData.prefs.Admin);
-    } else {
-      console.log(getData);
-      hello.textContent = 'Nothing here';
-    }
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-setTimeout(() => {
-  fetchUser();
-  createToast('success');
-}, 1000);
+buttons.forEach((btn) => {
+  btn.addEventListener('click', () => createToast(btn.id));
+});
