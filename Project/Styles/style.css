@@ -32,6 +32,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.admin-container {
+  opacity: 0;
+}
+
 .admin-body {
   margin-left: 280px;
   position: absolute;

@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../Styles/toast.css" />
+
     <link rel="stylesheet" href="../../Styles/style.css" />
     <link rel="stylesheet" href="../../Styles/toggleSwitcher.css" />
     <link
@@ -14,6 +16,13 @@
     <title>Admin Page</title>
   </head>
   <body>
+    <ul class="notifications"></ul>
+    <div class="loading-container">
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
     <div class="admin-container">
       <!--  SideBar Panel  -->
       <div class="admin-sidebar">
@@ -74,7 +83,7 @@
               </a>
             </li>
 
-            <li class="admin-sidebar-card notifications">
+            <li class="admin-sidebar-card notification">
               <a class="sidebar-select" href="#">
                 <img
                   src="../../Images/icons/notifications.svg"
@@ -234,7 +243,7 @@
         <h1>Calender</h1>
       </div>
       <!-- Notifications -->
-      <div class="admin-body notifications">
+      <div class="admin-body Notifications">
         <h1>Notifications</h1>
       </div>
       <!-- Settings -->
@@ -245,5 +254,7 @@
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="../../JS/index.js"></script>
     <script src="../../JS/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="../../JS/appwrite_config_admin.js"></script>
   </body>
 </html>

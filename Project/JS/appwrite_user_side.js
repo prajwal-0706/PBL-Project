@@ -3,7 +3,7 @@ const client = new Client();
 const account = new Account(client);
 const notifications = document.querySelector('.notifications');
 const hello = document.querySelector('.hello');
-let getData;
+const loading = document.querySelector('.loading-container');
 
 const toastDetails = {
   timer: 5000,
@@ -31,8 +31,9 @@ const removeToast = (toast) => {
   setTimeout(() => toast.remove(), 500);
 };
 
-const createToast = (id) => {
-  const { icon, text } = toastDetails[id];
+const createToast = (id, name) => {
+  const { icon } = toastDetails[id];
+  let text = `Hey ${name}`;
   const toast = document.createElement('li');
   toast.className = `toast ${id}`;
   toast.innerHTML = `<div class="column">
@@ -51,20 +52,24 @@ client
 const fetchUser = async () => {
   try {
     const data = await account.get();
-    getData = await data;
-    if (getData) {
-      hello.textContent = `${data.name}`;
-      console.log(getData.prefs.Admin);
-    } else {
-      console.log(getData);
-      hello.textContent = 'Nothing here';
-    }
+    return data;
   } catch (error) {
     console.log(error);
   }
 };
 
-setTimeout(() => {
-  fetchUser();
-  createToast('success');
-}, 1000);
+fetchUser().then((getData) => {
+  loading.style.display = 'none';
+  if (getData) {
+    hello.textContent = `${getData.name}`;
+    createToast('success', getData.name);
+    console.log(getData.prefs.Admin);
+    if (getData.prefs.Admin === 'true') {
+      window.location.href =
+        'http://127.0.0.1:5502/Project/HTML/Admin%20Panel/Admin.html';
+    }
+  } else {
+    window.location.href = '/Project/';
+    createToast('error');
+  }
+});
