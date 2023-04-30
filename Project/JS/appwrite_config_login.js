@@ -23,12 +23,11 @@ const createSession = async (email, password) => {
 
 const googleAuth = async () => {
   try {
-    const promise = await account.createOAuth2Session(
+    await account.createOAuth2Session(
       'google',
-      'http://127.0.0.1:5501/Project/HTML/User%20Panel/user-side.html',
-      'http://127.0.0.1:5501/Project/HTML/form/pbllogin.html'
+      'http://127.0.0.1:5502/Project/HTML/User%20Panel/user-side.html',
+      'http://127.0.0.1:5502/Project/HTML/form/pbllogin.html'
     );
-    console.log(promise);
   } catch (error) {
     console.log(error);
   }
@@ -36,12 +35,11 @@ const googleAuth = async () => {
 
 const githubAuth = async () => {
   try {
-    const promise = await account.createOAuth2Session(
+    await account.createOAuth2Session(
       'github',
-      'http://127.0.0.1:5501/Project/HTML/User%20Panel/user-side.html',
-      'http://127.0.0.1:5501/Project/HTML/form/pbllogin.html'
+      'http://127.0.0.1:5502/Project/HTML/User%20Panel/user-side.html',
+      'http://127.0.0.1:5502/Project/HTML/form/pbllogin.html'
     );
-    console.log(promise);
   } catch (error) {
     console.log(error);
   }
@@ -61,12 +59,11 @@ document.querySelector('.ggl').addEventListener('click', () => {
   googleAuth();
 });
 
-document.querySelector('.fbb').addEventListener('click', (e) => {
-  e.preventDefault();
+document.querySelector('.fbb').addEventListener('click', () => {
   githubAuth();
 });
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  // e.preventDefault();
   createSession(email, password);
 });

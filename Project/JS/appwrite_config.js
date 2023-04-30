@@ -66,7 +66,6 @@ form.addEventListener('submit', (e) => {
 });
 
 document.querySelector('.ggl').addEventListener('click', (e) => {
-  e.preventDefault();
   googleAuth();
 });
 

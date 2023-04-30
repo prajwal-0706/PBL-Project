@@ -314,3 +314,35 @@
   opacity: 1;
   z-index: 100;
 }
+
+.admin-details {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 45px 0;
+}
+
+.admin-container.toggle .admin-details {
+  filter: invert(1);
+}
+
+.admin-details .svg {
+  height: 27px;
+  width: 25px;
+}
+
+.admin-details .logout {
+  cursor: pointer;
+}
+
+.admin-details .admin-details-text-name-1 {
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.admin-details .admin-details-text-name-2 {
+  opacity: 0.4;
+  font-size: 15px;
+}

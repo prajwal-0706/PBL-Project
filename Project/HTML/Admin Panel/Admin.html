@@ -2,12 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../Styles/toast.css" />
-
     <link rel="stylesheet" href="../../Styles/style.css" />
     <link rel="stylesheet" href="../../Styles/toggleSwitcher.css" />
+
     <link
       rel="shortcut icon"
       href="../../Images/icons/logo.svg"
@@ -103,6 +110,22 @@
               </a>
             </li>
           </ul>
+          <div class="admin-details">
+            <img
+              class="svg"
+              src="../../Images/Admin/user-solid.svg"
+              alt="user"
+            />
+            <div class="admin-details-text">
+              <div class="admin-details-text-name-1"></div>
+              <div class="admin-details-text-name-2">Admin</div>
+            </div>
+            <img
+              class="svg logout"
+              src="../../Images/Admin/right-from-bracket-solid.svg"
+              alt="logout"
+            />
+          </div>
         </div>
       </div>
       <!-- Dashboard -->
@@ -252,9 +275,8 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="../../JS/index.js"></script>
-    <script src="../../JS/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="../../JS/chart.js"></script>
     <script src="../../JS/appwrite_config_admin.js"></script>
   </body>
 </html>
