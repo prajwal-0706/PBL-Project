@@ -16,12 +16,12 @@
       href="../../Images/icons/logo.svg"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="../../Styles/user-style.css" />
     <link rel="stylesheet" href="../../Styles/toast.css" />
-    <title></title>
+    <title>PBL Events</title>
   </head>
   <body>
     <ul class="notifications"></ul>
-
     <div class="loading-container">
       <div class="lds-ripple">
         <div></div>
@@ -29,7 +29,100 @@
       </div>
     </div>
 
-    <h1 class="hello"></h1>
+    <div class="user-container">
+      <div class="user-sidebar">
+        <div class="user-sidebar-logo">
+          <img draggable="false" src="../../Images/icons/logo.svg" alt="logo" />
+          <p class="user-logo-text">DYPIEMR</p>
+        </div>
+
+        <div class="user-sidebar-content">
+          <ul class="sidebar-content-list">
+            <li class="user-sidebar-card user">
+              <a class="sidebar-select active" href="#">
+                <img
+                  src="../../Images/icons/applications.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Main Events</span>
+              </a>
+            </li>
+
+            <li class="user-sidebar-card Analytics">
+              <a class="sidebar-select" href="#">
+                <img
+                  src="../../Images/icons/analytics.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Seminars</span>
+              </a>
+            </li>
+
+            <li class="user-sidebar-card invoice">
+              <a class="sidebar-select" href="#">
+                <img
+                  src="../../Images/icons/invoice.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Sports</span>
+              </a>
+            </li>
+
+            <li class="user-sidebar-card schedule">
+              <a class="sidebar-select" href="#">
+                <img
+                  src="../../Images/icons/schedule.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Schedule</span>
+              </a>
+            </li>
+
+            <li class="user-sidebar-card calender">
+              <a class="sidebar-select" href="#">
+                <img
+                  src="../../Images/icons/calender.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Calender</span>
+              </a>
+            </li>
+
+            <li class="user-sidebar-card notification">
+              <a class="sidebar-select" href="#">
+                <img
+                  src="../../Images/icons/notifications.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Notifications</span>
+              </a>
+            </li>
+
+            <li class="user-sidebar-card settings">
+              <a class="sidebar-select" href="#">
+                <img
+                  src="../../Images/icons/settings.svg"
+                  class="sidebar-card-img"
+                />
+                <span class="sidebar-text">Settings</span>
+              </a>
+            </li>
+          </ul>
+          <!-- <div class="user-details">
+          <img class="svg" src="../../Images/Admin/user-solid.svg" alt="user" />
+          <div class="user-details-text">
+            <div class="user-details-text-name-1"></div>
+            <div class="user-details-text-name-2">Admin</div>
+          </div>
+          <img
+            class="svg logout"
+            src="../../Images/Admin/right-from-bracket-solid.svg"
+            alt="logout"
+          />
+          </div> -->
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
     <script src="../../JS/appwrite_user_side.js"></script>

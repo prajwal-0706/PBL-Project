@@ -2,8 +2,8 @@ const { Client, Account, ID } = Appwrite;
 const client = new Client();
 const account = new Account(client);
 const notifications = document.querySelector('.notifications');
-const hello = document.querySelector('.hello');
 const loading = document.querySelector('.loading-container');
+const userContainer = document.querySelector('.user-container');
 
 const toastDetails = {
   timer: 5000,
@@ -59,11 +59,13 @@ const fetchUser = async () => {
 };
 
 fetchUser().then((getData) => {
-  loading.style.display = 'none';
   if (getData) {
-    hello.textContent = `${getData.name}`;
-    createToast('success', getData.name);
     console.log(getData.prefs.Admin);
+    setTimeout(() => {
+      loading.style.display = 'none';
+      userContainer.style.opacity = 1;
+      createToast('success', getData.name);
+    }, 800);
     if (getData.prefs.Admin === 'true') {
       window.location.href =
         'http://127.0.0.1:5502/Project/HTML/Admin%20Panel/Admin.html';

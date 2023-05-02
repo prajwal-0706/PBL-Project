@@ -15,7 +15,7 @@ const createSession = async (email, password) => {
   try {
     await account.createEmailSession(email, password);
     window.location.href =
-      'http://127.0.0.1:5501/Project/HTML/User%20Panel/user-side.html';
+      'http://127.0.0.1:5502/Project/HTML/User%20Panel/user-side.html';
   } catch (error) {
     console.log(error);
   }
@@ -64,6 +64,6 @@ document.querySelector('.fbb').addEventListener('click', () => {
 });
 
 form.addEventListener('submit', (e) => {
-  // e.preventDefault();
+  e.preventDefault();
   createSession(email, password);
 });
