@@ -7,7 +7,6 @@ const Toggler = document.querySelector('.toggleContainer');
 const Logout = document.querySelector('.logout');
 const SideBar = document.querySelectorAll('.sidebar-select');
 const notifications = document.querySelector('.notifications');
-const AdminBody = document.querySelectorAll('.admin-body');
 
 client
   .setEndpoint('https://cloud.appwrite.io/v1')
@@ -96,10 +95,11 @@ Logout.addEventListener('click', (e) => {
   e.preventDefault();
   loading.style.display = 'flex';
   Admin_Container.style.opacity = 0;
-  deleteSession();
-  setTimeout(() => {
-    window.location.href = '/Project/';
-  }, 500);
+  deleteSession().then(() => {
+    setTimeout(() => {
+      window.location.href = '/Project/';
+    }, 500);
+  });
 });
 
 fetchUser().then((data) => {
@@ -110,35 +110,21 @@ fetchUser().then((data) => {
       document.querySelector(
         '.admin-details-text-name-1'
       ).textContent = `${data.name}`;
-      dateHandler();
       createToast('success', 'Your Login is Successfull');
+      window.scrollTo(0, 0);
       console.log(data);
     } else {
       deleteSession().then(() => {
         window.location.href = '/Project/';
+        // window.location.replace(
+        //   'http://127.0.0.1:5502/Project/HTML/form/pbllogin.html'
+        // );
       });
     }
   } else {
     window.location.href = '/Project/';
   }
 });
-
-/* Active Div on Dashboard */
-
-for (let i = 0; i < SideBar.length; i++) {
-  SideBar[i].addEventListener('click', () => {
-    let j = 0,
-      k = 0;
-    while (j < SideBar.length) {
-      SideBar[j++].classList.remove('active');
-    }
-    while (k < AdminBody.length) {
-      AdminBody[k++].classList.remove('div-active');
-    }
-    SideBar[i].classList.add('active');
-    AdminBody[i].classList.add('div-active');
-  });
-}
 
 /*  Dark Mode Toggler  */
 
@@ -147,4 +133,25 @@ const clickHandler_1 = () => {
   document.querySelector('.admin-container').classList.toggle('toggle');
   document.querySelector('.admin-sidebar').classList.toggle('toggle');
   document.querySelector('.admin-charts').classList.toggle('toggle');
+};
+
+const AdminBody = document.querySelectorAll('.admin-body');
+
+window.onscroll = () => {
+  let current = 'dashboard';
+
+  AdminBody.forEach((body) => {
+    const bodyTop = body.offsetTop;
+    if (scrollY >= bodyTop - 60) {
+      current = body.getAttribute('id');
+    }
+  });
+
+  SideBar.forEach((sidebar) => {
+    sidebar.classList.remove('active');
+    if (sidebar.href.includes(current)) {
+      sidebar.classList.add('active');
+      console.log('hello');
+    }
+  });
 };
