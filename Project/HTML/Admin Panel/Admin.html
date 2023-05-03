@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../../Styles/toast.css" />
     <link rel="stylesheet" href="../../Styles/style.css" />
     <link rel="stylesheet" href="../../Styles/toggleSwitcher.css" />
-
     <link
       rel="shortcut icon"
       href="../../Images/icons/logo.svg"
@@ -66,7 +65,7 @@
                   src="../../Images/icons/invoice.svg"
                   class="sidebar-card-img"
                 />
-                <span class="sidebar-text">Invoice</span>
+                <span class="sidebar-text">Add Events</span>
               </a>
             </li>
 
@@ -253,9 +252,71 @@
       <div id="analytics" class="admin-body analytics">
         <h1>Analytics</h1>
       </div>
-      <!-- Invoice -->
-      <div id="invoice" class="admin-body invoice">
-        <h1>Invoice</h1>
+      <!-- Adding Event -->
+      <div id="invoice" class="admin-body add-event">
+        <h1>Creating an Event</h1>
+        <form class="create-event">
+          <div class="create-event-image">
+            <input required class="file" type="file" accept="image/*" />
+          </div>
+          <div class="create-event-heading">
+            <div class="create-event-heading-1">
+              <label for="heading-1">Event Title</label>
+              <input
+                class="create-event-input create-event-title"
+                id="heading-1"
+                type="text"
+                placeholder="Name of the Event"
+                name="eventTitle"
+              />
+            </div>
+            <div class="create-event-heading-2">
+              <label for="heading-2">Heading</label>
+              <input
+                class="create-event-input create-event-date"
+                id="heading-2"
+                type="date"
+                placeholder="Enter the Name of the Event"
+                name="eventDate"
+              />
+            </div>
+          </div>
+
+          <div class="create-event-sub-heading">
+            <label for="sub-heading">Heading</label>
+            <input
+              id="sub-heading"
+              class="create-event-sub-heading-input create-event-description"
+              type="text"
+              placeholder="Event Description"
+            />
+          </div>
+
+          <div class="create-event-heading">
+            <div class="create-event-heading-1">
+              <label for="heading-3">Heading</label>
+              <input
+                class="create-event-input"
+                id="heading-3"
+                type="text"
+                placeholder="Enter the Name of the Event"
+              />
+            </div>
+            <div class="create-event-heading-2">
+              <label for="heading-4">Heading</label>
+              <input
+                class="create-event-input"
+                id="heading-4"
+                type="text"
+                placeholder="Enter the Name of the Event"
+              />
+            </div>
+          </div>
+
+          <div class="create-event-submit">
+            <button type="submit" class="btn">Add Event</button>
+          </div>
+        </form>
       </div>
       <!-- Schedule -->
       <div id="schedule" class="admin-body schedule">

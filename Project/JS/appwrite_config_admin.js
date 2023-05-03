@@ -7,6 +7,18 @@ const Toggler = document.querySelector('.toggleContainer');
 const Logout = document.querySelector('.logout');
 const SideBar = document.querySelectorAll('.sidebar-select');
 const notifications = document.querySelector('.notifications');
+const eventTitle_input = document.querySelector('.create-event-title');
+const eventDate_input = document.querySelector('.create-event-date');
+const eventDescription_input = document.querySelector(
+  '.create-event-description'
+);
+const createEvent_input = document.querySelector('.create-event');
+
+let createEvent = {
+  eventTitle: '',
+  eventDate: '',
+  eventDescription: '',
+};
 
 client
   .setEndpoint('https://cloud.appwrite.io/v1')
@@ -110,6 +122,7 @@ fetchUser().then((data) => {
       document.querySelector(
         '.admin-details-text-name-1'
       ).textContent = `${data.name}`;
+      dateHandler();
       createToast('success', 'Your Login is Successfull');
       window.scrollTo(0, 0);
       console.log(data);
@@ -151,7 +164,42 @@ window.onscroll = () => {
     sidebar.classList.remove('active');
     if (sidebar.href.includes(current)) {
       sidebar.classList.add('active');
-      console.log('hello');
     }
   });
 };
+
+const file = document.querySelector('.file');
+
+file.addEventListener('change', (e) => {
+  const [pra] = file.files;
+  console.log(pra);
+
+  if (pra) {
+    let image = document.createElement('img');
+    image.src = URL.createObjectURL(pra);
+    image.classList.add('image');
+    image.style.width = '250px';
+    image.style.height = '250px';
+    document.querySelector('.create-event-image').appendChild(image);
+    image.addEventListener('click', () => {
+      file.style.zIndex = 10;
+    });
+    file.style.zIndex = -1;
+  } else {
+    alert('Select Valid Image');
+  }
+});
+
+const all = document.querySelectorAll('.create-event-input');
+
+console.log(all);
+
+all.forEach((each) => {
+  each.addEventListener('change', (e) => {
+    createEvent = {
+      ...createEvent,
+      [e.target.name]: e.target.value,
+    };
+    console.log(createEvent);
+  });
+});
