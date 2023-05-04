@@ -1,5 +1,6 @@
-const { Client, Account, ID } = Appwrite;
+const { Client, Account, ID, Databases } = Appwrite;
 const client = new Client();
+const databases = new Databases(client);
 const account = new Account(client);
 const notifications = document.querySelector('.notifications');
 const loading = document.querySelector('.loading-container');
@@ -9,19 +10,15 @@ const toastDetails = {
   timer: 5000,
   success: {
     icon: 'fa-circle-check',
-    text: `SuccessFully Logged In `,
   },
   error: {
     icon: 'fa-circle-xmark',
-    text: 'Error: This is an error toast.',
   },
   warning: {
     icon: 'fa-triangle-exclamation',
-    text: 'Warning: This is a warning toast.',
   },
   info: {
     icon: 'fa-circle-info',
-    text: 'Info: This is an information toast.',
   },
 };
 
@@ -33,12 +30,11 @@ const removeToast = (toast) => {
 
 const createToast = (id, name) => {
   const { icon } = toastDetails[id];
-  let text = `Hey ${name}`;
   const toast = document.createElement('li');
   toast.className = `toast ${id}`;
   toast.innerHTML = `<div class="column">
                          <i class="fa-solid ${icon}"></i>
-                         <span>${text}</span>
+                         <span>${name}</span>
                       </div>
                       <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
   notifications.appendChild(toast);
@@ -58,13 +54,26 @@ const fetchUser = async () => {
   }
 };
 
+const getEvents = async () => {
+  try {
+    const promise = await databases.listDocuments(
+      '6453b6ad51e4917763c1',
+      '6453b6c532d32950fb21'
+    );
+    console.log(promise.documents);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 fetchUser().then((getData) => {
   if (getData) {
     console.log(getData.prefs.Admin);
+    getEvents();
     setTimeout(() => {
       loading.style.display = 'none';
       userContainer.style.opacity = 1;
-      createToast('success', getData.name);
+      createToast('success', `Welcome......${getData.name}`);
     }, 800);
     if (getData.prefs.Admin === 'true') {
       window.location.href =
@@ -72,6 +81,6 @@ fetchUser().then((getData) => {
     }
   } else {
     window.location.href = '/Project/';
-    createToast('error');
+    createToast('error', 'Something Went worng');
   }
 });

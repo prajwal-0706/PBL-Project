@@ -1,5 +1,6 @@
-const { Client, Account, ID } = Appwrite;
+const { Client, Account, ID, Databases } = Appwrite;
 const client = new Client();
+const databases = new Databases(client);
 const account = new Account(client);
 const loading = document.querySelector('.loading-container');
 const Admin_Container = document.querySelector('.admin-container');
@@ -15,7 +16,7 @@ const eventDescription_input = document.querySelector(
 const createEvent_input = document.querySelector('.create-event');
 
 let createEvent = {
-  eventTitle: '',
+  eventName: '',
   eventDate: '',
   eventDescription: '',
 };
@@ -45,19 +46,15 @@ const toastDetails = {
   timer: 5000,
   success: {
     icon: 'fa-circle-check',
-    text: `SuccessFully Logged In `,
   },
   error: {
     icon: 'fa-circle-xmark',
-    text: 'Error: This is an error toast.',
   },
   warning: {
     icon: 'fa-triangle-exclamation',
-    text: 'Warning: This is a warning toast.',
   },
   info: {
     icon: 'fa-circle-info',
-    text: 'Info: This is an information toast.',
   },
 };
 
@@ -69,12 +66,12 @@ const removeToast = (toast) => {
 
 const createToast = (id, name) => {
   const { icon } = toastDetails[id];
-  let text = `Hey.. ${name} !!!`;
+
   const toast = document.createElement('li');
   toast.className = `toast ${id}`;
   toast.innerHTML = `<div class="column">
                          <i class="fa-solid ${icon}"></i>
-                         <span>${text}</span>
+                         <span>${name}</span>
                       </div>
                       <i class="fa-solid fa-xmark" onclick="removeToast(this.parentElement)"></i>`;
   notifications.appendChild(toast);
@@ -114,6 +111,22 @@ Logout.addEventListener('click', (e) => {
   });
 });
 
+const CreateEvent = async () => {
+  try {
+    const promise = await databases.createDocument(
+      '6453b6ad51e4917763c1',
+      '6453b6c532d32950fb21',
+      ID.unique(),
+      createEvent
+    );
+    return promise;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
 fetchUser().then((data) => {
   if (data) {
     if (data.prefs.Admin) {
@@ -129,9 +142,6 @@ fetchUser().then((data) => {
     } else {
       deleteSession().then(() => {
         window.location.href = '/Project/';
-        // window.location.replace(
-        //   'http://127.0.0.1:5502/Project/HTML/form/pbllogin.html'
-        // );
       });
     }
   } else {
@@ -169,18 +179,13 @@ window.onscroll = () => {
 };
 
 const file = document.querySelector('.file');
+const image = document.querySelector('.create-event-image img');
 
 file.addEventListener('change', (e) => {
   const [pra] = file.files;
   console.log(pra);
-
   if (pra) {
-    let image = document.createElement('img');
     image.src = URL.createObjectURL(pra);
-    image.classList.add('image');
-    image.style.width = '250px';
-    image.style.height = '250px';
-    document.querySelector('.create-event-image').appendChild(image);
     image.addEventListener('click', () => {
       file.style.zIndex = 10;
     });
@@ -190,16 +195,28 @@ file.addEventListener('change', (e) => {
   }
 });
 
-const all = document.querySelectorAll('.create-event-input');
+const inputBoxes = document.querySelectorAll('.create-event-input-box');
 
-console.log(all);
-
-all.forEach((each) => {
-  each.addEventListener('change', (e) => {
+inputBoxes.forEach((input) => {
+  input.addEventListener('change', (e) => {
     createEvent = {
       ...createEvent,
       [e.target.name]: e.target.value,
     };
     console.log(createEvent);
+  });
+});
+
+const CreateEventform = document.querySelector('.create-event');
+
+CreateEventform.addEventListener('submit', (e) => {
+  e.preventDefault();
+  CreateEvent().then((data) => {
+    console.log(data);
+    createToast('success', 'Event Created Successfully');
+    inputBoxes.forEach((input) => (input.value = ''));
+    file.value = '';
+    image.src = '';
+    file.style.zIndex = 1;
   });
 });

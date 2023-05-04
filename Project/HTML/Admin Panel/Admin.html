@@ -258,22 +258,23 @@
         <form class="create-event">
           <div class="create-event-image">
             <input required class="file" type="file" accept="image/*" />
+            <img class="img" width="250px" height="250px" src="" alt="logo" />
           </div>
           <div class="create-event-heading">
             <div class="create-event-heading-1">
               <label for="heading-1">Event Title</label>
               <input
-                class="create-event-input create-event-title"
+                class="create-event-input create-event-input-box"
                 id="heading-1"
                 type="text"
                 placeholder="Name of the Event"
-                name="eventTitle"
+                name="eventName"
               />
             </div>
             <div class="create-event-heading-2">
               <label for="heading-2">Heading</label>
               <input
-                class="create-event-input create-event-date"
+                class="create-event-input create-event-input-box"
                 id="heading-2"
                 type="date"
                 placeholder="Enter the Name of the Event"
@@ -286,9 +287,10 @@
             <label for="sub-heading">Heading</label>
             <input
               id="sub-heading"
-              class="create-event-sub-heading-input create-event-description"
+              class="create-event-sub-heading-input create-event-input-box"
               type="text"
               placeholder="Event Description"
+              name="eventDescription"
             />
           </div>
 
