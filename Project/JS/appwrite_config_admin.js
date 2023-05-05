@@ -14,10 +14,18 @@ const eventDescription_input = document.querySelector(
   '.create-event-description'
 );
 const createEvent_input = document.querySelector('.create-event');
+const file = document.querySelector('.file');
+const inputBoxes = document.querySelectorAll('.create-event-input-box');
+const CreateEventform = document.querySelector('.create-event');
+const CreateEvent_handler = document.querySelector('.add-event .btn');
+const createEventCross = document.querySelector('.create-event-cross');
+const image = document.querySelector('.create-event-image img');
 
 let createEvent = {
   eventName: '',
-  eventDate: '',
+  eventStartDate: '',
+  eventEndDate: '',
+  eventType: '',
   eventDescription: '',
 };
 
@@ -125,8 +133,6 @@ const CreateEvent = async () => {
   }
 };
 
-
-
 fetchUser().then((data) => {
   if (data) {
     if (data.prefs.Admin) {
@@ -178,9 +184,6 @@ window.onscroll = () => {
   });
 };
 
-const file = document.querySelector('.file');
-const image = document.querySelector('.create-event-image img');
-
 file.addEventListener('change', (e) => {
   const [pra] = file.files;
   console.log(pra);
@@ -195,8 +198,6 @@ file.addEventListener('change', (e) => {
   }
 });
 
-const inputBoxes = document.querySelectorAll('.create-event-input-box');
-
 inputBoxes.forEach((input) => {
   input.addEventListener('change', (e) => {
     createEvent = {
@@ -206,8 +207,6 @@ inputBoxes.forEach((input) => {
     console.log(createEvent);
   });
 });
-
-const CreateEventform = document.querySelector('.create-event');
 
 CreateEventform.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -219,4 +218,23 @@ CreateEventform.addEventListener('submit', (e) => {
     image.src = '';
     file.style.zIndex = 1;
   });
+});
+
+CreateEvent_handler.addEventListener('click', () => {
+  CreateEventform.style.display = 'flex';
+  console.log('click');
+  CreateEventform.style.pointerEvents = 'auto';
+});
+
+// window.addEventListener('mouseup', (e) => {
+//   let form = document.querySelector('.create-event');
+//   if (e.target != form && e.target.parentNode != form) {
+//     form.style.display = 'none';
+//     document.body.style.pointerEvents = 'auto';
+//   }
+// });
+
+createEventCross.addEventListener('click', () => {
+  CreateEventform.style.display = 'none';
+  document.body.style.pointerEvents = 'auto';
 });

@@ -80,6 +80,7 @@ fetchUser().then((getData) => {
         'http://127.0.0.1:5502/Project/HTML/Admin%20Panel/Admin.html';
     }
   } else {
+    console.log(getData);
     window.location.href = '/Project/';
     createToast('error', 'Something Went worng');
   }

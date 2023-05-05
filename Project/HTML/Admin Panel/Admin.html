@@ -254,8 +254,25 @@
       </div>
       <!-- Adding Event -->
       <div id="invoice" class="admin-body add-event">
-        <h1>Creating an Event</h1>
-        <form class="create-event">
+        <div class="add-event-button">
+          <div class="create-event-design box-1"></div>
+          <div class="create-event-design box-2"></div>
+          <h1>Add New Events</h1>
+          <ul>
+            <li>Create Events for Users</li>
+            <li>Add Type of the Event</li>
+            <li>Select the Start Date</li>
+            <li>Select the End Date</li>
+          </ul>
+          <button class="add-event btn">
+            <i class="fa-solid fa-plus"></i>Create an Event
+          </button>
+        </div>
+
+        <form style="display: none" class="create-event">
+          <div class="create-event-cross">
+            <i class="fa-sharp fa-solid fa-xmark"></i>
+          </div>
           <div class="create-event-image">
             <input required class="file" type="file" accept="image/*" />
             <img class="img" width="250px" height="250px" src="" alt="logo" />
@@ -264,6 +281,7 @@
             <div class="create-event-heading-1">
               <label for="heading-1">Event Title</label>
               <input
+                required
                 class="create-event-input create-event-input-box"
                 id="heading-1"
                 type="text"
@@ -272,20 +290,28 @@
               />
             </div>
             <div class="create-event-heading-2">
-              <label for="heading-2">Heading</label>
-              <input
+              <label for="heading-2">Type of Event</label>
+              <select
+                required
                 class="create-event-input create-event-input-box"
                 id="heading-2"
                 type="date"
                 placeholder="Enter the Name of the Event"
-                name="eventDate"
-              />
+                name="eventType"
+              >
+                <option value="#">Select Event Type</option>
+                <option value="Technical">Technical</option>
+                <option value="Non-Technical">Non-Technical</option>
+                <option value="Sports">Sports</option>
+                <option value="Seminar">Seminar</option>
+              </select>
             </div>
           </div>
 
           <div class="create-event-sub-heading">
-            <label for="sub-heading">Heading</label>
+            <label for="sub-heading">Event Description</label>
             <input
+              required
               id="sub-heading"
               class="create-event-sub-heading-input create-event-input-box"
               type="text"
@@ -296,20 +322,24 @@
 
           <div class="create-event-heading">
             <div class="create-event-heading-1">
-              <label for="heading-3">Heading</label>
+              <label for="heading-3">Start Date</label>
               <input
-                class="create-event-input"
+                required
+                class="create-event-input create-event-input-box"
                 id="heading-3"
-                type="text"
+                type="date"
+                name="eventStartDate"
                 placeholder="Enter the Name of the Event"
               />
             </div>
             <div class="create-event-heading-2">
-              <label for="heading-4">Heading</label>
+              <label for="heading-4">End Date</label>
               <input
-                class="create-event-input"
+                required
+                class="create-event-input create-event-input-box"
                 id="heading-4"
-                type="text"
+                type="date"
+                name="eventEndDate"
                 placeholder="Enter the Name of the Event"
               />
             </div>
