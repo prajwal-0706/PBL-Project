@@ -5,6 +5,8 @@ const account = new Account(client);
 const notifications = document.querySelector('.notifications');
 const loading = document.querySelector('.loading-container');
 const userContainer = document.querySelector('.user-container');
+const Toggler = document.querySelector('.toggleContainer');
+const logOut = document.querySelector('.user-logout');
 
 const toastDetails = {
   timer: 5000,
@@ -66,6 +68,14 @@ const getEvents = async () => {
   }
 };
 
+const deleteSession = async () => {
+  try {
+    await account.deleteSession('current');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 fetchUser().then((getData) => {
   if (getData) {
     console.log(getData.prefs.Admin);
@@ -74,6 +84,7 @@ fetchUser().then((getData) => {
       loading.style.display = 'none';
       userContainer.style.opacity = 1;
       createToast('success', `Welcome......${getData.name}`);
+      document.querySelector('.login-userName').textContent = getData.name;
     }, 800);
     if (getData.prefs.Admin === 'true') {
       window.location.href =
@@ -84,4 +95,20 @@ fetchUser().then((getData) => {
     window.location.href = '/Project/';
     createToast('error', 'Something Went worng');
   }
+});
+
+const clickHandler_1 = () => {
+  Toggler.classList.toggle('on');
+  document.querySelector('.user-container').classList.toggle('toggle');
+  document.querySelector('.user-sidebar').classList.toggle('toggle');
+};
+
+logOut.addEventListener('click', () => {
+  loading.style.display = 'flex';
+  userContainer.style.opacity = 0;
+  deleteSession().then(() => {
+    setTimeout(() => {
+      window.location.href = '/Project/';
+    }, 500);
+  });
 });
