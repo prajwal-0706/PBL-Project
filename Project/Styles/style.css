@@ -51,10 +51,10 @@
 
 .admin-sidebar {
   position: fixed;
-  top: 12px;
-  left: 12px;
+  top: 55px;
+  left: 25px;
   width: 260px;
-  height: 97vh;
+  height: 85vh;
   background-color: #fff;
   border-radius: 10px;
   transition: all 0.3s ease-in-out;
@@ -66,8 +66,8 @@
 
 .admin-sidebar-logo {
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 51px;
+  margin-bottom: 16px;
 }
 
 .admin-sidebar-logo p {
@@ -85,8 +85,9 @@
   width: 100%;
   padding: 10px 10px;
   border-radius: 10px;
-  height: 85%;
+  height: 75%;
   position: relative;
+  margin-top: 15px;
 }
 
 .sidebar-content-list .admin-sidebar-card {
@@ -351,7 +352,7 @@
   align-items: center;
   gap: 20px;
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   left: 0px;
 }
 

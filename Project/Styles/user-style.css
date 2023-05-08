@@ -10,7 +10,7 @@
 
 .user-container {
   /* height: fit-content; */
-  height: 100vh;
+  height: 100%;
   padding-bottom: 50px;
   background-color: #f1f4fa;
   transition: all 0.3s ease-in-out;
@@ -19,8 +19,8 @@
 
 .user-sidebar {
   position: fixed;
-  top: 40px;
-  left: 25px;
+  top: 85px;
+  left: 27px;
   width: 260px;
   height: fit-content;
   padding-bottom: 20px;
@@ -35,7 +35,7 @@
 
 .user-sidebar-logo {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 50px;
   margin-bottom: 15px;
 }
 
@@ -172,9 +172,10 @@
 }
 
 .user-logout {
+  width: 150px;
   position: absolute;
   display: flex;
-  left: 50px;
+  left: 25px;
   bottom: -40px;
   background-color: #fff;
   gap: 15px;
@@ -193,4 +194,16 @@
 .user-main-body-login-user:hover .user-logout {
   bottom: -60px;
   z-index: 1;
+}
+
+.user-body {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+}
+
+.user-body h1 {
+  background: linear-gradient(to right, #2948ff, #396afc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
