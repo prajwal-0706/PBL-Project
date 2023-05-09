@@ -16,7 +16,7 @@
   justify-content: center;
   background-color: #f1f4fa;
   border-radius: 15px;
-  display: flex;
+  display: none;
 }
 .left {
   height: 100vh;

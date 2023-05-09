@@ -12,10 +12,16 @@
       referrerpolicy="no-referrer"
     />
     <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link
       rel="shortcut icon"
       href="../../Images/icons/logo.svg"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="../../Styles/timeline.css" />
+    <link rel="stylesheet" href="../../Styles/calender.css" />
     <link rel="stylesheet" href="../../Styles/current-events.css" />
     <link rel="stylesheet" href="../../Styles/user-style.css" />
     <link rel="stylesheet" href="../../Styles/toast.css" />
@@ -138,11 +144,86 @@
         <!-- Schedule -->
         <div class="user-body schedule">
           <h1>Schedule</h1>
+          <div class="calender-wrapper">
+            <header>
+              <p class="current-date"></p>
+              <div class="icons">
+                <span id="prev" class="material-symbols-rounded"
+                  >chevron_left</span
+                >
+                <span id="next" class="material-symbols-rounded"
+                  >chevron_right</span
+                >
+              </div>
+            </header>
+            <div class="calendar">
+              <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="days"></ul>
+            </div>
+          </div>
         </div>
 
         <!-- Past Events -->
         <div class="user-body past-events">
           <h1>Past Events</h1>
+          <div class="past-events-timeline">
+            <ul class="timeline">
+              <!-- Item 1 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">Freelancer</span>
+                    <span class="time-wrapper"
+                      ><span class="time">2013 - present</span></span
+                    >
+                  </div>
+                  <div class="desc">
+                    My current employment. Way better than the position before!
+                  </div>
+                </div>
+              </li>
+
+              <!-- Item 2 -->
+              <li>
+                <div class="direction-l">
+                  <div class="flag-wrapper">
+                    <span class="flag">Apple Inc.</span>
+                    <span class="time-wrapper"
+                      ><span class="time">2011 - 2013</span></span
+                    >
+                  </div>
+                  <div class="desc">
+                    My first employer. All the stuff I've learned and projects
+                    I've been working on.
+                  </div>
+                </div>
+              </li>
+
+              <!-- Item 3 -->
+              <li>
+                <div class="direction-r">
+                  <div class="flag-wrapper">
+                    <span class="flag">Harvard University</span>
+                    <span class="time-wrapper"
+                      ><span class="time">2008 - 2011</span></span
+                    >
+                  </div>
+                  <div class="desc">
+                    A description of all the lectures and courses I have taken
+                    and my final degree?
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Event Photos -->
@@ -154,5 +235,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
     <script src="../../JS/appwrite_user_side.js"></script>
+    <script src="../../JS/calender.js"></script>
   </body>
 </html>
