@@ -20,6 +20,10 @@
       href="../../Images/icons/logo.svg"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="../../Styles/timeline.css" />
     <link rel="stylesheet" href="../../Styles/calender.css" />
     <link rel="stylesheet" href="../../Styles/current-events.css" />
@@ -47,7 +51,7 @@
         <div class="user-sidebar-content">
           <ul class="sidebar-content-list">
             <li class="user-sidebar-card user">
-              <a class="sidebar-select active" href="#">
+              <a class="sidebar-select active" href="#main-events">
                 <img
                   src="../../Images/icons/applications.svg"
                   class="sidebar-card-img"
@@ -57,7 +61,7 @@
             </li>
 
             <li class="user-sidebar-card Schedule">
-              <a class="sidebar-select" href="#">
+              <a class="sidebar-select" href="#schedule">
                 <img
                   src="../../Images/icons/analytics.svg"
                   class="sidebar-card-img"
@@ -67,7 +71,7 @@
             </li>
 
             <li class="user-sidebar-card invoice">
-              <a class="sidebar-select" href="#">
+              <a class="sidebar-select" href="#past-events">
                 <img
                   src="../../Images/icons/invoice.svg"
                   class="sidebar-card-img"
@@ -77,7 +81,7 @@
             </li>
 
             <li class="user-sidebar-card Event-Photos">
-              <a class="sidebar-select" href="#">
+              <a class="sidebar-select" href="#event-photos">
                 <img
                   src="../../Images/icons/schedule.svg"
                   class="sidebar-card-img"
@@ -136,13 +140,13 @@
           </div>
         </div>
         <!--  Main Events  -->
-        <div class="user-body main-events">
+        <div id="main-events" class="user-body main-events">
           <h1>Recent Events</h1>
           <ul class="user-current-events"></ul>
         </div>
 
         <!-- Schedule -->
-        <div class="user-body schedule">
+        <div id="schedule" class="user-body schedule">
           <h1>Schedule</h1>
           <div class="calender-wrapper">
             <header>
@@ -172,69 +176,73 @@
         </div>
 
         <!-- Past Events -->
-        <div class="user-body past-events">
+        <div id="past-events" class="user-body past-events">
           <h1>Past Events</h1>
           <div class="past-events-timeline">
-            <ul class="timeline">
-              <!-- Item 1 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <span class="flag">Treasure Hunt</span>
-                    <span class="time-wrapper"
-                      ><span class="time">23-2-2023</span></span
-                    >
-                  </div>
-                  <div class="desc">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Soluta, sequi!
-                  </div>
-                </div>
-              </li>
-
-              <!-- Item 2 -->
-              <li>
-                <div class="direction-l">
-                  <div class="flag-wrapper">
-                    <span class="flag">Code Quest</span>
-                    <span class="time-wrapper"
-                      ><span class="time">25-2-2023</span></span
-                    >
-                  </div>
-                  <div class="desc">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Ipsa, impedit!
-                  </div>
-                </div>
-              </li>
-
-              <!-- Item 3 -->
-              <li>
-                <div class="direction-r">
-                  <div class="flag-wrapper">
-                    <span class="flag">I can code 2.0</span>
-                    <span class="time-wrapper"
-                      ><span class="time">28-8-2023</span></span
-                    >
-                  </div>
-                  <div class="desc">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Quas, ipsum.
-                  </div>
-                </div>
-              </li>
-            </ul>
+            <ul class="timeline"></ul>
           </div>
         </div>
 
         <!-- Event Photos -->
-        <div class="user-body event-photos">
+        <div id="event-photos" class="user-body event-photos">
           <h1>Event Photos</h1>
+          <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="https://loremflickr.com/320/240?random=1" />
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
       </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="../../JS/appwrite_user_side.js"></script>
     <script src="../../JS/calender.js"></script>
   </body>

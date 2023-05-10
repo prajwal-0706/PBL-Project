@@ -8,6 +8,13 @@ const userContainer = document.querySelector('.user-container');
 const Toggler = document.querySelector('.toggleContainer');
 const logOut = document.querySelector('.user-logout');
 const currentUl = document.querySelector('.user-current-events');
+const UserBody = document.querySelectorAll('.user-body');
+const SideBar = document.querySelectorAll('.sidebar-select');
+
+let date_for_event = new Date();
+let currMonths = date_for_event.getMonth();
+let currYears = date_for_event.getFullYear();
+let currDates = date_for_event.getDate();
 
 const toastDetails = {
   timer: 5000,
@@ -87,8 +94,17 @@ fetchUser().then((getData) => {
       document.querySelector('.login-userName').textContent = getData.name;
       getEvents().then((userData) => {
         console.log(userData);
-        for (let user of userData) {
-          createCurrentEvent(user);
+        for (let user = 0; user < userData.length; user++) {
+          let userdata = userData[user];
+          if (
+            parseInt(userdata.eventStartDate.slice(0, 4)) <= currYears &&
+            parseInt(userdata.eventStartDate.slice(5, 7)) <= currMonths + 1 &&
+            parseInt(userdata.eventStartDate.slice(8, 10)) < currDates
+          ) {
+            createPastEvents(userData[user], user);
+          } else {
+            createCurrentEvent(userData[user]);
+          }
         }
       });
     }, 800);
@@ -184,3 +200,61 @@ const createCurrentEvent = (data) => {
 
   currentUl.appendChild(eventLi);
 };
+
+const createPastEvents = (data, index) => {
+  let createLi = document.createElement('li');
+
+  createLi.innerHTML = `
+  <div class="direction-${index % 2 === 0 ? 'l' : 'r'}">
+  <div class="flag-wrapper">
+    <span class="flag">${data.eventName}</span>
+    <span class="time-wrapper"
+      ><span class="time">${data.eventStartDate}</span></span
+    >
+  </div>
+  <div class="desc">
+   ${data.eventDescription}
+  </div>
+</div>
+  `;
+
+  document.querySelector('.timeline').appendChild(createLi);
+};
+
+window.onscroll = () => {
+  let current = 'main-events';
+
+  UserBody.forEach((body) => {
+    const bodyTop = body.offsetTop;
+    if (scrollY >= bodyTop - 60) {
+      current = body.getAttribute('id');
+    }
+  });
+
+  SideBar.forEach((sidebar) => {
+    sidebar.classList.remove('active');
+    if (sidebar.href.includes(current)) {
+      sidebar.classList.add('active');
+    }
+  });
+};
+
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+  slidesPerView: 3,
+  gap: '15px',
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  autoplay: {
+    delay: 1500,
+  },
+});
