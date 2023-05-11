@@ -38,8 +38,8 @@ const googleAuth = () => {
   try {
     account.createOAuth2Session(
       'google',
-      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html',
-      'https://event-management-site.web.app/Project/HTML/form/pbllogin.html'
+      'https://event-management-site.web.app/HTML/User%20Panel/user-side.html',
+      'https://event-management-site.web.app/HTML/form/pbllogin.html'
     );
   } catch (error) {
     console.log(error);
