@@ -4,43 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Register Here</title>
+    <link
+      rel="shortcut icon"
+      href="../../Images/Forms/logo.svg"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="../../Styles/register.css" />
   </head>
   <body>
     <div class="maindiv">
       <div class="container">
-        <br>
-        <img src="../../Images/Forms/logo.svg" alt="img">
-        
+        <br />
+        <img src="../../Images/Forms/logo.svg" alt="img" />
+
         <h1>Register Here</h1>
-        <br>
-        <div class="innerdiv">
+        <br />
+        <form class="innerdiv">
           <label for="teamname">Team Name</label>
           <input
-            class="inputs"
+            class="inputs in"
             type="teamname"
-            name="teamname"
+            name="teamName"
             id=""
             placeholder="name of the event"
           />
           <label for="">Team Leader Name</label>
-          <input class="inputs" type="text" name="" id="" placeholder="name" />
+          <input
+            name="teamLeaderName"
+            class="inputs in"
+            type="text"
+            name=""
+            id=""
+            placeholder="name"
+          />
           <label for="">Enter your email</label>
           <input
-            class="inputs"
+            class="inputs in"
             type="email"
-            name=""
+            name="leaderEmail"
             id=""
             placeholder="enter your email"
           />
           <label for="recept">Upload fee recept</label> <br />
           <div class="inputs fee">
-            <input type="file" name="recept" id="" />
+            <input class="file" type="file" name="recept" id="" />
             <button class="btn">submit</button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/appwrite@11.0.0"></script>
+    <script src="../../JS/Register.js"></script>
   </body>
 </html>

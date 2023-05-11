@@ -38,8 +38,8 @@ const googleAuth = () => {
   try {
     account.createOAuth2Session(
       'google',
-      'http://127.0.0.1:5502/Project/HTML/User%20Panel/user-side.html',
-      'http://127.0.0.1:5502/Project/HTML/form/pbllogin.html'
+      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html',
+      'https://event-management-site.web.app/Project/HTML/form/pbllogin.html'
     );
   } catch (error) {
     console.log(error);
@@ -50,8 +50,8 @@ const githubAuth = async () => {
   try {
     const promise = await account.createOAuth2Session(
       'github',
-      'http://127.0.0.1:5502/Project/HTML/User%20Panel/user-side.html',
-      'http://127.0.0.1:5502/Project/HTML/form/pbllogin.html'
+      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html',
+      'https://event-management-site.web.app/Project/HTML/form/pbllogin.html'
     );
     console.log(promise);
   } catch (error) {

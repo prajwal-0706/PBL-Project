@@ -85,10 +85,14 @@ const deleteSession = async () => {
   }
 };
 
+let data;
+
 fetchUser().then((getData) => {
   if (getData) {
     setTimeout(() => {
       loading.style.display = 'none';
+      data = getData;
+      console.log(data);
       userContainer.style.opacity = 1;
       createToast('success', `Welcome......${getData.name}`);
       document.querySelector('.login-userName').textContent = getData.name;
@@ -110,7 +114,7 @@ fetchUser().then((getData) => {
     }, 800);
     if (getData.prefs.Admin === 'true') {
       window.location.href =
-        'http://127.0.0.1:5502/Project/HTML/Admin%20Panel/Admin.html';
+        'https://event-management-site.web.app/Project/HTML/Admin%20Panel/Admin.html';
     }
   } else {
     console.log(getData);
