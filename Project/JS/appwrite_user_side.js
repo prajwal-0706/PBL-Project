@@ -143,7 +143,9 @@ const createCurrentEvent = (data) => {
   eventLi.innerHTML = `
   <div class="book-container">
   <div class="content">
+  <a href="../form/register.html"> 
     <button class="btn">Register Now</button>
+    </a>
   </div>
 </div>
 <div class="informations-container">
