@@ -114,7 +114,7 @@ fetchUser().then((getData) => {
     }, 800);
     if (getData.prefs.Admin === 'true') {
       window.location.href =
-        'https://event-management-site.web.app/Project/HTML/Admin%20Panel/Admin.html';
+        'https://event-management-site.web.app/HTML/Admin%20Panel/Admin.html';
     }
   } else {
     console.log(getData);
@@ -134,7 +134,7 @@ logOut.addEventListener('click', () => {
   userContainer.style.opacity = 0;
   deleteSession().then(() => {
     setTimeout(() => {
-      window.location.href = '/Project/';
+      window.location.href = '/';
     }, 500);
   });
 });

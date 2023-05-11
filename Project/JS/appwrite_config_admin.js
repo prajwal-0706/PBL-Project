@@ -163,7 +163,7 @@ Logout.addEventListener('click', (e) => {
   Admin_Container.style.opacity = 0;
   deleteSession().then(() => {
     setTimeout(() => {
-      window.location.href = '/Project/';
+      window.location.href = '/';
     }, 500);
   });
 });
@@ -254,11 +254,10 @@ fetchUser().then((data) => {
       console.log(data);
     } else {
       deleteSession().then(() => {
-        window.location.href = '/Project/';
+        window.location.href = '/';
       });
     }
   } else {
-    window.location.href = '/Project/';
+    window.location.href = '/';
   }
 });
-

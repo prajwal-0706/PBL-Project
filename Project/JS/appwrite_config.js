@@ -50,8 +50,8 @@ const githubAuth = async () => {
   try {
     const promise = await account.createOAuth2Session(
       'github',
-      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html',
-      'https://event-management-site.web.app/Project/HTML/form/pbllogin.html'
+      'https://event-management-site.web.app/HTML/User%20Panel/user-side.html',
+      'https://event-management-site.web.app/HTML/form/pbllogin.html'
     );
     console.log(promise);
   } catch (error) {
@@ -78,7 +78,7 @@ form.addEventListener('submit', (e) => {
   createAccount(email, password, Name).then((data) => {
     setTimeout(() => {
       createSession(email, password).then(() => {
-        window.location.href = '/Project/HTML/User Panel/user-side.html';
+        window.location.href = '/HTML/User Panel/user-side.html';
       });
     }, 300);
   });

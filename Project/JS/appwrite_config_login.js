@@ -15,7 +15,7 @@ const createSession = async (email, password) => {
   try {
     await account.createEmailSession(email, password);
     window.location.href =
-      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html';
+      'https://event-management-site.web.app/HTML/User%20Panel/user-side.html';
   } catch (error) {
     console.log(error);
   }
@@ -25,8 +25,8 @@ const googleAuth = async () => {
   try {
     await account.createOAuth2Session(
       'google',
-      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html',
-      'https://event-management-site.web.app/Project/HTML/form/pbllogin.html'
+      'https://event-management-site.web.app/HTML/User%20Panel/user-side.html',
+      'https://event-management-site.web.app/HTML/form/pbllogin.html'
     );
   } catch (error) {
     console.log(error);
@@ -37,8 +37,8 @@ const githubAuth = async () => {
   try {
     await account.createOAuth2Session(
       'github',
-      'https://event-management-site.web.app/Project/HTML/User%20Panel/user-side.html',
-      'https://event-management-site.web.app/Project/HTML/form/pbllogin.html'
+      'https://event-management-site.web.app/Project/User%20Panel/user-side.html',
+      'https://event-management-site.web.app/Project/form/pbllogin.html'
     );
   } catch (error) {
     console.log(error);
