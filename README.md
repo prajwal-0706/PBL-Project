@@ -1,7 +1,7 @@
 # PBL-Project
 
 
-1. [PBL Project ( Official Deployment)](https://event-management-site.web.app/) 
+1. [PBL Project ](https://event-management-site.web.app/) 
 
 2. [Dashboard](https://prajwal-0706.github.io/PBL-Project/Project/HTML/Admin%20Panel/Admin.html) 
 
